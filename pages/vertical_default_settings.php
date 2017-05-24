@@ -1956,6 +1956,150 @@ $wp_timeline_12_options ['card_settings'] = array (
         'default' => $settings ['close-button-text'],
     ),
 );
+$wp_timeline_12_options ['timeline_category_settings'] = array (
+    'display-category'=>array(
+        'type' => 'checkbox',
+        'title' => __ ( "Display:", 'my_vertical_content_timeline' ),
+        'tooltip' => __ ( "Show/hide category.", 'my_vertical_content_timeline' ),
+        'default' => $settings ['display-category']
+    ),
+    'category-type' => array ( // added new option to align timeline
+        'type' => 'select',
+        'title' => __ ( "Type:", 'my_vertical_content_timeline' ),/*shindiri studio*/
+        'tooltip' => __ ( "Select type of category.", 'my_vertical_content_timeline' ),
+        'default' => $settings ['category-type'],
+        'values' => array (/*shindiri studio*/
+            'years' => __ ( "Years", 'my_vertical_content_timeline' ),
+            "months" => __ ( "Months", 'my_vertical_content_timeline' ),
+            "categories" => __ ( "Categories", 'my_vertical_content_timeline' ),
+        )
+    ),
+    'category-position' => array ( // added new option to align timeline
+        'type' => 'select',
+        'title' => __ ( "Position:", 'my_vertical_content_timeline' ),/*shindiri studio*/
+        'tooltip' => __ ( "Select position of category.", 'my_vertical_content_timeline' ),
+        'default' => $settings ['category-position'],
+        'values' => array (/*shindiri studio*/
+            'topcenter' => __ ( "Top Center", 'my_vertical_content_timeline' ),
+            "topleft" => __ ( "Top Left", 'my_vertical_content_timeline' ),
+            "topright" => __ ( "Top Right", 'my_vertical_content_timeline' ),
+            'leftside' => __ ( "Left Side", 'my_vertical_content_timeline' ),
+            "rightside" => __ ( "Right Side", 'my_vertical_content_timeline' ),
+        )
+    ),
+    'category-alignment' => array ( // added new option to align timeline
+        'type' => 'select',
+        'title' => __ ( "Alignment:", 'my_vertical_content_timeline' ),/*shindiri studio*/
+        'tooltip' => __ ( "Select alignment of category.", 'my_vertical_content_timeline' ),
+        'default' => $settings ['category-alignment'],
+        'values' => array (/*shindiri studio*/
+            'center' => __ ( "Center", 'my_vertical_content_timeline' ),
+            "left" => __ ( "Left", 'my_vertical_content_timeline' ),
+            "right" => __ ( "Right", 'my_vertical_content_timeline' ),
+        )
+    ),
+    "number-of-items" => array (
+        'type' => 'text',
+        'title' => __ ( "Number Of Items:", 'my_vertical_content_timeline' ),
+        'tooltip' => __ ( "Set number of items for category to be viewed.", 'my_vertical_content_timeline' ),
+        'default' => $settings ['number-of-items'],
+    ),
+    "active-item-color" => array (
+        'type' => 'color',
+        'title' => __ ( "Active Color:", 'my_vertical_content_timeline' ),
+        'tooltip' => __ ( "Choose color for active item.", 'my_vertical_content_timeline' ),
+        'default' => $settings ['active-item-color'],
+    ),
+    "hover-item-color" => array (
+        'type' => 'color',
+        'title' => __ ( "Hover Color:", 'my_vertical_content_timeline' ),
+        'tooltip' => __ ( "Choose color for category item hover.", 'my_vertical_content_timeline' ),
+        'default' => $settings ['hover-item-color'],
+    ),
+    "arrow-color" => array (
+        'type' => 'color',
+        'title' => __ ( "Arrow Color:", 'my_vertical_content_timeline' ),
+        'tooltip' => __ ( "Choose color for arrow.", 'my_vertical_content_timeline' ),
+        'default' => $settings ['arrow-color'],
+    ),
+    "arrow-hover-color" => array (
+        'type' => 'color',
+        'title' => __ ( "Arrow Hover Color:", 'my_vertical_content_timeline' ),
+        'tooltip' => __ ( "Choose color for arrow hover.", 'my_vertical_content_timeline' ),
+        'default' => $settings ['arrow-hover-color'],
+    ),
+
+
+);
+$wp_timeline_12_options ['line_node_settings'] = array (
+
+    'display-line'=>array(
+        'type' => 'checkbox',
+        'title' => __ ( "Display Line:", 'my_vertical_content_timeline' ),
+        'tooltip' => __ ( "Show/hide line.", 'my_vertical_content_timeline' ),
+        'default' => $settings ['display-line']
+    ),
+    "line-color" => array (
+        'type' => 'color',
+        'title' => __ ( "Line Color:", 'my_vertical_content_timeline' ),
+        'tooltip' => __ ( "Choose color for line.", 'my_vertical_content_timeline' ),
+        'default' => $settings ['line-color'],
+    ),
+    'directional-line'=>array(
+        'type' => 'checkbox',
+        'title' => __ ( "Directional Line:", 'my_vertical_content_timeline' ),
+        'tooltip' => __ ( "Show/hide directional line.", 'my_vertical_content_timeline' ),
+        'default' => $settings ['directional-line'],
+    ),
+    'node-text' => array ( // added new option to align timeline
+        'type' => 'select',
+        'title' => __ ( "Node Text:", 'my_vertical_content_timeline' ),/*shindiri studio*/
+        'tooltip' => __ ( "Select position node text.", 'my_vertical_content_timeline' ),
+        'default' => $settings ['node-text'],
+        'values' => array (/*shindiri studio*/
+            'centered' => __ ( "Centered", 'my_vertical_content_timeline' ),
+            "directional" => __ ( "Directional", 'my_vertical_content_timeline' ),
+            "none" => __ ( "None", 'my_vertical_content_timeline' ),
+        )
+    ),
+    "node-text-color" => array (
+        'type' => 'color',
+        'title' => __ ( "Node Text Color:", 'my_vertical_content_timeline' ),
+        'tooltip' => __ ( "Choose color for node text.", 'my_vertical_content_timeline' ),
+        'default' => $settings ['node-text-color'],
+    ),
+    'node-shape' => array ( // added new option to align timeline
+        'type' => 'select',
+        'title' => __ ( "Node Shape:", 'my_vertical_content_timeline' ),/*shindiri studio*/
+        'tooltip' => __ ( "Select shape of node.", 'my_vertical_content_timeline' ),
+        'default' => $settings ['node-shape'],
+        'values' => array (/*shindiri studio*/
+            'square' => __ ( "Square", 'my_vertical_content_timeline' ),
+            "circle" => __ ( "Circle", 'my_vertical_content_timeline' ),
+            "none" => __ ( "None", 'my_vertical_content_timeline' ),
+        )
+    ),
+    "node-color" => array (
+        'type' => 'color',
+        'title' => __ ( "Node Color:", 'my_vertical_content_timeline' ),
+        'tooltip' => __ ( "Choose color for node.", 'my_vertical_content_timeline' ),
+        'default' => $settings ['node-color'],
+    ),
+    "close-button-text" => array (
+        'type' => 'text',
+        'title' => __ ( "Close Button Text:", 'my_vertical_content_timeline' ),
+        'tooltip' => __ ( "Input text for close button", 'my_vertical_content_timeline' ),
+        'default' => $settings ['close-button-text'],
+    ),
+    'space-around-node' => array ( // old
+        'type' => 'text',
+        'title' => __ ( "Space Around Node:", 'my_vertical_content_timeline' ),
+        'tooltip' => __ ( "Set spacing around the node.", 'my_vertical_content_timeline' ),
+        'default' => $settings ['space-around-node'],
+        'unit' => 'px',
+        'size' => 5
+    ),
+);
 $wp_timeline_12_options ['global_settings'] = array (
 		
 		'style' => array (
@@ -2118,7 +2262,7 @@ $wp_timeline_12_options ['global_settings'] = array (
 				'tooltip' => __ ( "Width of the line element (default 920px).", 'my_vertical_content_timeline' ),
 				'default' => $settings ['line-width'],
 				'unit' => 'px',
-				'size' => 5 
+				'size' => 5
 		),
 		'item-margin' => array ( // old
 				'type' => 'text',

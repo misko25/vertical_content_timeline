@@ -736,11 +736,19 @@ $my_has_id=false;
                         $append=ob_get_clean();
                         wp_v_my_timeline_render_options($wp_timeline_12_options['global_settings'],__("GLOBAL SETTINGS",'my_vertical_content_timeline'),$append);
                         wp_v_my_timeline_render_options($wp_timeline_12_options['vertical_settings'],__("VERTICAL OPTIONS",'my_vertical_content_timeline'));
+                        /**
+                         * Timeline Settings
+                         */
+                        wp_v_my_timeline_render_options($wp_timeline_12_options['timeline_category_settings'],__("CATEGORY SETTINGS",'my_vertical_content_timeline'));
+                        /**
+                         * Line Node Settings
+                         */
 
-
+                        wp_v_my_timeline_render_options($wp_timeline_12_options['line_node_settings'],__("LINE/NODE SETTINGS",'my_vertical_content_timeline'));
                         /**
                          * Render card item settings
                          */
+
                         wp_v_my_timeline_render_options($wp_timeline_12_options['card_settings'],__("CARD SETTINGS",'my_vertical_content_timeline'));
                         wp_v_my_timeline_render_options($wp_timeline_12_options['button_settings'],__("BUTTON SETTINGS",'my_vertical_content_timeline'));
                         wp_v_my_timeline_render_options($wp_timeline_12_options['text_settings'],__("FONT SETTINGS",'my_vertical_content_timeline'));
@@ -750,6 +758,7 @@ $my_has_id=false;
                         wp_v_my_timeline_render_options($wp_timeline_12_options['responsive_settings'],__("RESPONSIVE SETTINGS",'my_vertical_content_timeline'));
 
                         wp_v_my_timeline_render_options($wp_timeline_12_options['search_settings'],__("SEARCH SETTINGS",'my_vertical_content_timeline'));
+
                         /**
                          * izmenio
                          */
