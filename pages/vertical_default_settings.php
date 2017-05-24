@@ -1746,22 +1746,93 @@ $wp_timeline_12_options ['card_settings'] = array (
 				'title' => __ ( "Image Border Color:", 'my_vertical_content_timeline' ),
 				'tooltip' => __ ( "Image Border Color", 'my_vertical_content_timeline' ),
 				'default' => $settings ['item-image-border-color'] 
-		)
-		,
-		'show-date' => array (
-				'type' => 'checkbox',
-				'title' => __ ( "Show Date:", 'my_vertical_content_timeline' ),
-				'tooltip' => __ ( "Show Date", 'my_vertical_content_timeline' ),
-				'default' => $settings ['show-date'] 
-		)
-		,
+		),
+        'image-position' => array ( // added new option to align timeline
+            'type' => 'select',
+            'title' => __ ( "Image Position:", 'my_vertical_content_timeline' ),/*shindiri studio*/
+            'tooltip' => __ ( "Position image on card.", 'my_vertical_content_timeline' ),
+            'default' => $settings ['image-position'],
+            'values' => array (/*shindiri studio*/
+                'top' => __ ( "Top", 'my_vertical_content_timeline' ),
+                "left" => __ ( "Left", 'my_vertical_content_timeline' ),
+            )
+        ),
+        'image-shape' => array ( // added new option to shape image
+            'type' => 'select',
+            'title' => __ ( "Image Shape:", 'my_vertical_content_timeline' ),/*shindiri studio*/
+            'tooltip' => __ ( "Choose shape of image.", 'my_vertical_content_timeline' ),
+            'default' => $settings ['image-shape'],
+            'values' => array (/*shindiri studio*/
+                'square' => __ ( "Square", 'my_vertical_content_timeline' ),
+                "circle" => __ ( "Circle", 'my_vertical_content_timeline' ),
+                "angled" => __ ( "Angled", 'my_vertical_content_timeline' ),
+            )
+        ),
+        'show-date' => array ( // added new option to shape image
+            'type' => 'select',
+            'title' => __ ( "Date:", 'my_vertical_content_timeline' ),/*shindiri studio*/
+            'tooltip' => __ ( "Choose date view.", 'my_vertical_content_timeline' ),
+            'default' => $settings ['show-date'],
+            'values' => array (/*shindiri studio*/
+                'text' => __ ( "Text", 'my_vertical_content_timeline' ),
+                "circle" => __ ( "Circle", 'my_vertical_content_timeline' ),
+                "none" => __ ( "None", 'my_vertical_content_timeline' ),
+            )
+        ),
+        'subtitle-category' => array (
+            'type' => 'checkbox',
+            'title' => __ ( "Subtitle/Category:", 'my_vertical_content_timeline' ),
+            'tooltip' => __ ( "Show or hide subtitle/category.", 'my_vertical_content_timeline' ),
+            'default' => $settings ['subtitle-category']
+        ),
+        'show-title' => array (
+            'type' => 'checkbox',
+            'title' => __ ( "Title:", 'my_vertical_content_timeline' ),
+            'tooltip' => __ ( "Show or hide title.", 'my_vertical_content_timeline' ),
+            'default' => $settings ['show-title']
+        ),
+        'show-image' => array (
+            'type' => 'checkbox',
+            'title' => __ ( "Image:", 'my_vertical_content_timeline' ),
+            'tooltip' => __ ( "Show or hide image.", 'my_vertical_content_timeline' ),
+            'default' => $settings ['show-image']
+        ),
+        'show-excerpt' => array (
+            'type' => 'checkbox',
+            'title' => __ ( "Excerpt:", 'my_vertical_content_timeline' ),
+            'tooltip' => __ ( "Show or hide excerpt.", 'my_vertical_content_timeline' ),
+            'default' => $settings ['show-excerpt']
+        ),
+        'show-like' => array (
+            'type' => 'checkbox',
+            'title' => __ ( "Like:", 'my_vertical_content_timeline' ),
+            'tooltip' => __ ( "Show or hide like button.", 'my_vertical_content_timeline' ),
+            'default' => $settings ['show-like']
+        ),
+        'show-share' => array (
+            'type' => 'checkbox',
+            'title' => __ ( "Share:", 'my_vertical_content_timeline' ),
+            'tooltip' => __ ( "Show or hide share button.", 'my_vertical_content_timeline' ),
+            'default' => $settings ['show-share']
+        ),
+        'show-comments' => array (
+            'type' => 'checkbox',
+            'title' => __ ( "Comments:", 'my_vertical_content_timeline' ),
+            'tooltip' => __ ( "Show or hide comments.", 'my_vertical_content_timeline' ),
+            'default' => $settings ['show-comments']
+        ),
+        "hover-title-color" => array (
+            'type' => 'color',
+            'title' => __ ( "Hover Title Color:", 'my_vertical_content_timeline' ),
+            'tooltip' => __ ( "Select color for title hover.", 'my_vertical_content_timeline' ),
+            'default' => $settings ['hover-title-color']
+        ),
 		"item-back-color" => array (
 				'type' => 'color',
 				'title' => __ ( "Background Color:", 'my_vertical_content_timeline' ),
 				'tooltip' => __ ( "Background Color", 'my_vertical_content_timeline' ),
 				'default' => $settings ['item-back-color'] 
-		)
-		,
+		),
 		"item-background" => array (
 				'type' => 'image',
 				'title' => __ ( "Background Image:", 'my_vertical_content_timeline' ),
@@ -1773,15 +1844,6 @@ $wp_timeline_12_options ['card_settings'] = array (
 		'my_line_2' => array (
 				'type' => 'my_line',
 				'title' => __ ( "ACTIVE VIEW:", 'my_vertical_content_timeline' ) //shindiri studio
-		)
-		,
-		"item-open-width" => array (
-				'type' => 'text',
-				'title' => __ ( "Card Width:", 'my_vertical_content_timeline' ),
-				'tooltip' => __ ( "Width of open items (default 490px).", 'my_vertical_content_timeline' ),
-				'default' => $settings ['item-open-width'],
-				'unit' => 'px',
-				'size' => 5 
 		),
 		"item-open-content-padding" => array (
 				'type' => 'text',
@@ -1841,7 +1903,58 @@ $wp_timeline_12_options ['card_settings'] = array (
 				'title' => __ ( "Background Image:", 'my_vertical_content_timeline' ),
 				'tooltip' => __ ( "Background Image.", 'my_vertical_content_timeline' )
 		
-		)		 
+		),
+        'close-button' => array ( // added new option to shape image
+            'type' => 'select',
+            'title' => __ ( "Close Button:", 'my_vertical_content_timeline' ),/*shindiri studio*/
+            'tooltip' => __ ( "Select style for close button.", 'my_vertical_content_timeline' ),
+            'default' => $settings ['close-button'],
+            'values' => array (/*shindiri studio*/
+                'x' => __ ( "'X'", 'my_vertical_content_timeline' ),
+                "circle" => __ ( "Text", 'my_vertical_content_timeline' ),
+                "none" => __ ( "None", 'my_vertical_content_timeline' ),
+            )
+        ),
+        "close-button-background-color" => array (
+            'type' => 'color',
+            'title' => __ ( "Close Button Background Color:", 'my_vertical_content_timeline' ),
+            'tooltip' => __ ( "Choose color for close button background.", 'my_vertical_content_timeline' ),
+            'default' => $settings ['close-button-background-color'],
+        ),
+        "close-button-background-hover-color" => array (
+            'type' => 'color',
+            'title' => __ ( "Close Button Background Hover Color:", 'my_vertical_content_timeline' ),
+            'tooltip' => __ ( "Choose color for close button background hover.", 'my_vertical_content_timeline' ),
+            'default' => $settings ['close-button-background-hover-color'],
+        ),
+        "close-button-color" => array (
+            'type' => 'color',
+            'title' => __ ( "Close Button Color:", 'my_vertical_content_timeline' ),
+            'tooltip' => __ ( "Choose color for close button.", 'my_vertical_content_timeline' ),
+            'default' => $settings ['close-button-color'],
+        ),
+        "close-button-hover-color" => array (
+            'type' => 'color',
+            'title' => __ ( "Close Button Hover Color:", 'my_vertical_content_timeline' ),
+            'tooltip' => __ ( "Choose color for close button hover.", 'my_vertical_content_timeline' ),
+            'default' => $settings ['close-button-hover-color'],
+        ),
+        'close-button-position' => array ( // added new option to align timeline
+            'type' => 'select',
+            'title' => __ ( "Close Button Position:", 'my_vertical_content_timeline' ),/*shindiri studio*/
+            'tooltip' => __ ( "Select position of close button.", 'my_vertical_content_timeline' ),
+            'default' => $settings ['close-button position'],
+            'values' => array (/*shindiri studio*/
+                'left' => __ ( "Left", 'my_vertical_content_timeline' ),
+                "right" => __ ( "Right", 'my_vertical_content_timeline' ),
+            )
+        ),
+        "close-button-text" => array (
+        'type' => 'text',
+        'title' => __ ( "Close Button Text:", 'my_vertical_content_timeline' ),
+        'tooltip' => __ ( "Input text for close button", 'my_vertical_content_timeline' ),
+        'default' => $settings ['close-button-text'],
+    ),
 );
 $wp_timeline_12_options ['global_settings'] = array (
 		
@@ -2055,6 +2168,18 @@ $wp_timeline_12_options ['global_settings'] = array (
             'title' => __ ( "Fast forward/backward:", 'my_vertical_content_timeline' ),
             'tooltip' => __ ( "Enable icons to quickly move from first to last item and backwards", 'my_vertical_content_timeline' ),
             'default' => $settings ['fast-forward-backward']
+        ),
+        'tim-align' => array ( // added new option to align timeline
+            'type' => 'select',
+            'title' => __ ( "Timeline Items Alignment:", 'my_vertical_content_timeline' ),/*shindiri studio*/
+            'tooltip' => __ ( "Align timeline items.", 'my_vertical_content_timeline' ),
+            'default' => $settings ['tim-align'],
+            'values' => array (/*shindiri studio*/
+                'all-left' => __ ( "All Left", 'my_vertical_content_timeline' ),
+                "all-right" => __ ( "All Right", 'my_vertical_content_timeline' ),
+                "left-right" => __ ( "Left-Right", 'my_vertical_content_timeline' ),
+                "right-left" => __ ( "Right-Left", 'my_vertical_content_timeline' ),
+            )
         ),
 		'line-style' => array (
 				'type' => 'select',

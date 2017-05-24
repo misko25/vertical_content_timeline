@@ -3332,7 +3332,7 @@ Project demo: http://shindiristudio.com/timeline
 			if (!data.options.categories) {
 				html += 
 				'<div class="vertical_t_line_view" data-id="'+cnt+'" style="position:relative; display:inline-block; width:100%;">\n'+
-				'					<div class="vertical_t_line_m" style="width:100%; border:0; position:absolute; top:0;">\n';
+				'<div class="vertical_t_line_m" style="width:100%; border:0; position:absolute; top:0;">\n';
 				for (var x in nodes) {
 					html += nodes[x];
 				}

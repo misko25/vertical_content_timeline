@@ -550,7 +550,7 @@ function wp_v_my_timeline_render_options($options,$title,$append=''){
 										<h3 class="my_submenu"><?php echo $val['title'];?></h3>
 										</td>
 									<?php }else{?>
-											<?php if($key == "style" || $key == "cat-type" || $key == "read-more" || $key == "search-bar-position" || $key == "align-start-item" || $key == "hide-show-search" || $key == "line-style" || $key == "nav-style" || $key == "shadow" || $key == "easing" || $key == "button-type" || $key == "item-header-font-type" || $key == "item-text-font-type" || $key == "item-text-align" || $key == "item-open-header-font-type" || $key == "item-open-text-font-type") {?>
+											<?php if($key == "style" || $key == "cat-type" || $key == "close-button-position" || $key == "close-button" || $key == "show-date" || $key == "tim-align" || $key == "image-position" || $key == "image-shape" || $key == "read-more" || $key == "search-bar-position" || $key == "align-start-item" || $key == "hide-show-search" || $key == "line-style" || $key == "nav-style" || $key == "shadow" || $key == "easing" || $key == "button-type" || $key == "item-header-font-type" || $key == "item-text-font-type" || $key == "item-text-align" || $key == "item-open-header-font-type" || $key == "item-open-text-font-type") {?>
 												<tr class="field-row" id="my_option_<?php echo $key?>">
 												<td class = "td-left" colspan="2">
 													<span class="timeline-help dashicons dashicons-editor-help"><span class="timeline-tooltip"><?php echo $val['tooltip'];?></span></span>
