@@ -1,4 +1,4 @@
-<?php   
+<?php
 /*
 Plugin Name: Vertical Content Timeline
 Plugin URI:
@@ -9,9 +9,9 @@ Author URI: http://www.shindiristudio.com/
 */
 
 if (!class_exists("verticalContentTimelineAdmin")) {
-	ini_set('memory_limit','100M');
-	require_once dirname( __FILE__ ) . '/vertical_content_timeline_class.php';
-	global $my_vctimeline_object;
-	$vctimeline = new VerticalContentTimelineAdmin (__FILE__);
-	$my_vctimeline_object=$vctimeline;
+    ini_set('memory_limit', '100M');
+    require_once dirname(__FILE__) . '/vertical_content_timeline_class.php';
+    global $my_vctimeline_object;
+    $vctimeline = new VerticalContentTimelineAdmin (__FILE__);
+    $my_vctimeline_object = $vctimeline;
 }
