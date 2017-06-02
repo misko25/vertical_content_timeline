@@ -34,6 +34,7 @@ $settings = array(
     'item-transition-close' => false,
     'cat-type' => 'months',
     'num-of-years' => '9',
+    'number-of-items' => '3',
     'number-of-posts' => '30',
 
     // style
@@ -2299,11 +2300,12 @@ $wp_timeline_12_options ['timeline_category_settings'] = array(
             "right" => __("Right", 'my_vertical_content_timeline'),
         )
     ),
-    "number-of-items" => array(
+    'number-of-items' => array(
         'type' => 'text',
         'title' => __("Number Of Items:", 'my_vertical_content_timeline'),
         'tooltip' => __("Set number of items for category to be viewed.", 'my_vertical_content_timeline'),
-        'default' => $settings ['number-of-items'],
+        'default' => '3',
+        'size' => 5
     ),
     "active-item-color" => array(
         'type' => 'color',

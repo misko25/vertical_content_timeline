@@ -58,13 +58,13 @@ $frontHtml = '
 
 #vtl' . $id . ' .vertical_t_line_m,
 #content #vtl' . $id . ' .vertical_t_line_m {
-	width: ' . (((int)$settings['line-width']) / 2 - 2) . 'px;
+	width: ' . (((int)$settings['line-width']) - 2) . 'px;
 }
 
 #vtl' . $id . ' .vertical_t_line_m.right,
 #content #vtl' . $id . ' .vertical_t_line_m.right {
-	left: ' . (((int)$settings['line-width']) / 2 - 1) . 'px;
-	width: ' . (((int)$settings['line-width']) / 2 - 1) . 'px;
+	<!--left: ' . (((int)$settings['line-width'])) . 'px;-->
+	width: ' . (((int)$settings['line-width']) - 2) . 'px;
 }
 ' .
 
@@ -83,11 +83,11 @@ $frontHtml = '
 }
 #vtl' . $id . ' .vertical_t_line_node,
 #content #vtl' . $id . ' .vertical_t_line_node {
-	color: ' . $settings['node-desc-color'] . ';
+	/*color: ' . $settings['node-desc-color'] . '*/;
 }
 #vtl' . $id . ' .vertical_t_line_node:after,
 #content #vtl' . $id . ' .vertical_t_line_node:after {
-	background: ' . $settings['node-desc-color'] . ';
+	/*background: ' . $settings['node-desc-color'] . '*/;
 }
 
 #vtl' . $id . ' .item.item_node_hover:before,
@@ -1276,8 +1276,8 @@ if (isset($itemsArray) && is_array($itemsArray)) {
                     $imagePrettyPhotoIDs = explode(',', $arr['item-image-photos']);
                     $prettyPhotoContainer .= '<div class="pretty-photo-images" style="display:none">';
                     foreach ($imagePrettyPhotoIDs as $value) {
-                        $imageElementImg = wp_get_attachment_image($value, add_image_size(false));
-                        $imageElementSrc = wp_get_attachment_image_url($value, add_image_size(false));
+                        $imageElementImg = wp_get_attachment_image($value, add_image_size());
+                        $imageElementSrc = wp_get_attachment_image_url($value, add_image_size());
 
                         $prettyPhotoContainer .= '<a href="';
                         $prettyPhotoContainer .= $imageElementSrc;

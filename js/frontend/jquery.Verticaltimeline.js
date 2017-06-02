@@ -109,6 +109,21 @@
         }
     }
 
+    //return number of elements
+    function returnNumOfElements(objectClass) {
+        var counter = 0;
+        $(objectClass).each(function() {
+            counter++;
+        });
+        return counter;
+    }
+
+    //return width of element
+    function returnWidthOfElement(objectClass) {
+        var elementWidth = $(objectClass).width();
+        return elementWidth + 50;
+    }
+
     var t_methods = {
         init: function (options) {
 
@@ -944,6 +959,7 @@
             ;
             if (!settings.hideTimeline) {
                 $this.VerticalTimeline('createElements');
+
                 if ($this.hasClass('timelineClean')) {
                 }
             }
@@ -2663,6 +2679,10 @@
                     var m = myCalculateMargin(data.currentIndex, count);
                     data.marginTop += m;
                     data.currentIndex = count;
+                    /**
+                     * VERTICAL TIMELINE CHANGES: marginTop: data.marginTop ? marginTop: 0
+                     */
+
                     data.iholder.stop(true).animate({marginTop: data.marginTop}, speed + (speed / 5) * (Math.abs(multiply) - 1), easing, function () {
                         // Trigger ScrollStop event
                         $this.trigger('scrollStop.Timeline');
@@ -2881,6 +2901,7 @@
                 data = $this.data('vrt_timeline'),
                 $items = data.items;
             var html = '';
+
             if (data.options.search_bar_position == 0) {
                 html = '\n' +
                     /* '		<div class="vertical_search_bar_holder" style="display:block !important;"><input id="vertical_search-cards" placeholder="Search specific card..." type="text"/></div>\n'+*/
@@ -2949,7 +2970,7 @@
                 }
             }
             //}else {*/
-            var myCount = 0, myCountSegments = -1, myYearsSegments = {}, myYearsSegmentsStr = {};
+            var myCount = 0, myCountSegments = -1, myYearsSegments = {}, myYearsSegmentsStr = {}, monthsPerYear = {};
             var myIncrementSegment = true;
             //array of items unique years ids
             var dataIds = [];
@@ -2984,7 +3005,8 @@
                                 return true;
                         }
                         dataIds.push(dataId);
-                        leftPos = (100 / (myYearsCount + 1)) * (counter + 1);
+                        //changed to uniques.length to correct aligmnent of timeline line categories
+                        leftPos = (100 / (uniques.length + 1)) * (counter + 1);
                         counter++;
                         var isActive = (index == data.currentIndex ? ' active' : '');
                         var nName = ((typeof nodeName != 'undefined') ? nodeName : d);
@@ -3149,22 +3171,18 @@
                                 });
                                 html +=
                                     '					</div> <!-- KRAJ PRVOG -->\n';
-                                /*if(i==(myCountSegments)){
+                                html +=
+                                    '					</div> \n';
                                  cnt++;
 
-                                 }*/
                             }
                             else {
                                 firstMonth = !firstMonth;
                                 html +=
-                                    '					<div class="vertical_t_line_m right" style="position:absolute; top:0;">\n' +
+                                    '<div class="vertical_t_line_view" data-id="' + cnt + '" style="position:relative; display:inline-block;">\n' +
+                                    '					<div class="vertical_t_line_m" style="position:absolute; top:0;">\n' +
                                     '						<h4 class="vertical_t_line_month_year" style="position:abolute; width:100% top:0; text-align:center;">' + (data.options.yearsOn ? '<span class="vertical_t_line_month_year_year"> ' + myYearsSegmentsStr[i] + '</span>' : '' ) + '</h4>\n';
 
-                                // Fill with nodes
-                                /*for (dy in yearsArr[yr][mnth]) {
-                                 html+= nodes[yearsArr[yr][mnth][dy]];
-
-                                 }*/
                                 $.each(mySegments, function (my_i, my_v) {
                                     html += my_v;
                                 });
@@ -3197,7 +3215,7 @@
                                 html +=
                                     '<div class="vertical_t_line_view" data-id="' + cnt + '" style="position:relative; display:inline-block;">\n' +
                                     '					<div class="vertical_t_line_m" style="position:absolute; top:0;">\n' +
-                                    '						<h4 class="vertical_t_line_month_year" style="position:abolute; width:100% top:0; text-align:center;">' + months[mnth] + (data.options.yearsOn ? '<span class="vertical_t_line_month_year_year"> ' + (yr < 0 ? (-yr) + ' B.C.' : yr) + '</span>' : '' ) + '</h4>\n';
+                                    '						<h4 class="vertical_t_line_month_year" style="position:abolute; width:100% top:0; text-align:center;">' + (data.options.yearsOn ? '<span class="vertical_t_line_month_year_year"> ' + (yr < 0 ? (-yr) + ' B.C.' : yr) + '</span>' : '' ) + '</h4>\n';
 
                                 // Fill with nodes
                                 for (dy in yearsArr[yr][mnth]) {
@@ -3206,12 +3224,15 @@
                                 }
                                 html +=
                                     '					</div> <!-- KRAJ PRVOG -->\n';
+                                html += '					</div> \n';
+                                cnt++;
                             }
                             else {
                                 firstMonth = !firstMonth;
                                 html +=
-                                    '					<div class="vertical_t_line_m right" style="position:absolute; top:0;">\n' +
-                                    '						<h4 class="vertical_t_line_month_year" style="position:abolute; width:100% top:0; text-align:center;">' + (typeof months[mnth] !== 'undefined' ? months[mnth] : '') + (data.options.yearsOn ? '<span class="vertical_t_line_month_year_year"> ' + yr + '</span>' : '' ) + '</h4>\n';
+                                    '<div class="vertical_t_line_view" data-id="' + cnt + '" style="position:relative; display:inline-block;">\n' +
+                                    '					<div class="vertical_t_line_m" style="position:absolute; top:0;">\n' +
+                                    '						<h4 class="vertical_t_line_month_year" style="position:abolute; width:100% top:0; text-align:center;">' + (data.options.yearsOn ? '<span class="vertical_t_line_month_year_year"> ' + yr + '</span>' : '' ) + '</h4>\n';
 
                                 // Fill with nodes
                                 for (dy in yearsArr[yr][mnth]) {
@@ -3330,6 +3351,10 @@
 
                 });
             });
+            data = $this.data('vrt_timeline');
+            $('.vertical_timeline_line').css({'width': data.options.my_num_of_items * returnWidthOfElement('.vertical_t_line_node')});
+            $('.vertical_timeline_line').find('.vertical_t_line_view').css({'width': data.options.my_num_of_items * returnWidthOfElement('.vertical_t_line_node')});
+            $('.vertical_timeline_line').find('.vertical_t_line_m').css({'width': data.options.my_num_of_items * returnWidthOfElement('.vertical_t_line_node')});
 
             $this.find('#vertical_t_line_backward').click(function () {
                 $this.VerticalTimeline('lineBackward');

@@ -195,12 +195,14 @@
 .vertical_timeline .vertical_t_line_holder,
 #content .vertical_timeline .vertical_t_line_holder {
     height: 80px;
-    background: url('../images/timeline/light/line.jpg') repeat-x 0 39px;
+    /*commented to remove horizontal line on timeline line*/
+    /*background: url('../images/timeline/light/line.jpg') repeat-x 0 39px;*/
 }
 
 .vertical_timeline.darkLine .vertical_t_line_holder,
 #content .vertical_timeline.darkLine .vertical_t_line_holder {
-    background: url('../images/timeline/dark/line.jpg') repeat-x 0 39px;
+    /*commented to remove horizontal line on timeline line*/
+    /*background: url('../images/timeline/dark/line.jpg') repeat-x 0 39px;*/
 }
 
 /* 2 months are stored in one view */
@@ -225,8 +227,9 @@
 #content .vertical_timeline .vertical_t_line_m {
     margin-top: 35px;
     height: 10px;
-    border-left: 1px solid #545454;
-    border-right: 1px solid #545454;
+    /*commented to remove left/right border from line moths*/
+    /*border-left: 1px solid #545454;
+    border-right: 1px solid #545454;*/
     width: 448px;
 }
 
@@ -256,7 +259,8 @@
     height: 10px;
     font-size: 12px;
     top: -25px;
-    background: url('../images/timeline/light/dot.png') no-repeat center 24px;
+    /*commented to remove nodes from timeline line*/
+    /*background: url('../images/timeline/light/dot.png') no-repeat center 24px;*/
     color: #141817;
 }
 
@@ -277,7 +281,8 @@
 
 .vertical_timeline a.vertical_t_line_node.active,
 #content .vertical_timeline a.vertical_t_line_node.active {
-    background: url('../images/timeline/light/dot-selected.png') no-repeat center 24px;
+    /*commented to remove nodes from timeline line*/
+    /*background: url('../images/timeline/light/dot-selected.png') no-repeat center 24px;*/
 }
 
 .vertical_timeline.darkLine a.vertical_t_line_node.active,
@@ -291,46 +296,50 @@
 #content .vertical_timeline.flatLine .vertical_t_line_holder {
     padding: 10px 0 0 0;
     height: 80px;
-    background: url('../images/timeline/light/line.jpg') repeat-x 0 49px;
+    /*commented to remove horizontal line from timeline line*/
+    /*background: url('../images/timeline/light/line.jpg') repeat-x 0 49px;*/
 }
 
 .vertical_timeline.flatLine .vertical_t_line_m,
 #content .vertical_timeline.flatLine .vertical_t_line_m {
-    border-left: 1px solid transparent;
-    border-right: 1px solid #b7b6b6;
+    /*commented to remove left/right border from line months*/
+    /*border-left: 1px solid transparent;
+    border-right: 1px solid #b7b6b6;*/
 }
 
 .vertical_timeline.flatLine .vertical_t_line_m.right,
 #content .vertical_timeline.flatLine .vertical_t_line_m.right {
-    border-left: 1px solid #b7b6b6;
-    border-right: 1px solid transparent;
+    /*commented to remove left/right border from line months*/
+    /*border-left: 1px solid #b7b6b6;
+    border-right: 1px solid transparent;*/
 }
 
 .vertical_timeline.flatLine a.vertical_t_line_node,
 #content .vertical_timeline.flatLine a.vertical_t_line_node {
     text-decoration: none;
-    padding: 38px 0 4px;
+    /*changed year padding top*/
+    padding: 23px 0 4px;
     font-family: Montserrat;
     height: 10px;
-    font-size: 12px;
+    font-size: 13px; /* changed for category title on timeline line*/
     line-height: 12px;
     top: -25px;
     position: relative;
-    color: #b7b6b6;
+    color: #000000; /*changed for category color on timeline line*/
 }
 
 .vertical_timeline.flatLine a.vertical_t_line_node:after,
 #content .vertical_timeline.flatLine a.vertical_t_line_node:after {
     content: "";
-    border-radius: 22px;
+   /* border-radius: 22px;  commented for disabling nodes*/
     height: 10px;
     width: 10px;
-    border: 2px solid #ffffff;
+    /*border: 2px solid #ffffff;  commented for disabling nodes*/
     position: absolute;
     top: 23px;
     left: 50%;
     margin: 0 0 0 -7px;
-    background: #dd5555;
+   /*background: #dd5555;  commented for disabling nodes*/
 }
 
 .vertical_timeline.flatLine a.vertical_t_line_node.active,
@@ -340,7 +349,7 @@
 
 .vertical_timeline.flatLine a.vertical_t_line_node.active:after,
 #content .vertical_timeline.flatLine a.vertical_t_line_node.active:after {
-    border: 2px solid #b7b6b6;
+    /*border: 2px solid #b7b6b6;  commented for disabling nodes*/
 }
 
 .vertical_timeline.flatLine .vertical_t_node_desc,
@@ -1492,7 +1501,7 @@
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
-    -ms-user-select ': none;
+    -ms-user-select: none;
     user-select: none;
 }
 

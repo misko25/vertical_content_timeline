@@ -78,13 +78,13 @@ $frontHtml = '
  
 #tl' . $id . ' .vertical_t_line_m,
 #content #tl' . $id . ' .vertical_t_line_m {
-	width: ' . (((int)$settings['line-width']) / 2 - 2) . 'px;
+	width: ' . (((int)$settings['line-width']) - 2) . 'px;
 }
  
 #tl' . $id . ' .vertical_t_line_m.right,
 #content #tl' . $id . ' .vertical_t_line_m.right {
-	left: ' . (((int)$settings['line-width']) / 2 - 1) . 'px;
-	width: ' . (((int)$settings['line-width']) / 2 - 1) . 'px;
+	left: ' . (((int)$settings['line-width'])) . 'px;
+	width: ' . (((int)$settings['line-width']) - 2) . 'px;
 }
  
 #tl' . $id . ' .item,

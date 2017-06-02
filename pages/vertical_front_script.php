@@ -131,6 +131,7 @@ if (isset($myCats)) {
 }
 $frontHtml .= 'my_show_years:' . $settings['num-of-years'] . ',
 	        my_years_view: ' . $settings['num-of-years'] . ',
+	        my_num_of_items: ' .$settings['number-of-items']. ',
 			my_del:130,
 			vertical_limit:' . $my_vertical_limit . ',
 			vertical:' . $my_is_vertical . ',
